@@ -12,18 +12,23 @@
         5 rounds and the winner is the one with more points */
         let playerPoints = 0;
         let cpuPoints = 0;
-        let selection = ["Rock","Paper","Scissors"];
+        let selection = ["rock","paper","scissors"];
         //cpu: randomly returns rock, paper, or scissors
         function computerPlay() {
-            //selects random number in the array
+            //selects random number in the array from 0-2
             return selection[Math.floor(Math.random() * 3)];
         }
 
         function playerSelection() {
+            let pchoice = window.prompt("Please enter: Rock, Paper, or Scissors.").toLowerCase();
             //while input is not rock, paper, or scissors, ask player for input
-                //if input is not rps, tell player to choose rps
-            
+            while (!selection.includes(pchoice)) {
+                pchoice = window.prompt("Invalid input, please enter: rock, paper, or scissors.").toLowerCase();
+            }
+            return pchoice;
         }
+
+        console.log(playerSelection());
         //play a round: compare player input with computer choice 
             //if player wins give add one point to player, print message that says player won
             //if computer wins add one point to computer, print message
