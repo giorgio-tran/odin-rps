@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <script>
+        /* Create a rock paper scissor game vs. computer that keeps track of score for 
+        5 rounds and the winner is the one with more points */
+        let playerPoints = 0;
+        let cpuPoints = 0;
+        let selection = ["Rock","Paper","Scissors"];
+        //cpu: randomly returns rock, paper, or scissors
+        function computerPlay() {
+            //selects random number in the array
+            return selection[Math.floor(Math.random() * 3)];
+        }
+
+        function playerSelection() {
+            //while input is not rock, paper, or scissors, ask player for input
+                //if input is not rps, tell player to choose rps
+            
+        }
+        //play a round: compare player input with computer choice 
+            //if player wins give add one point to player, print message that says player won
+            //if computer wins add one point to computer, print message
+            //if it's a tie, return null
+
+        //game: plays a 5 round game and accumulates score, winner has more pts
+            //if it's a tie, say that it's a tie
+            //if player 1 wins, print that the player won
+            //if computer wins, print that the computer won 
+
+
+       
+    </script>
+</body>
+</html>
