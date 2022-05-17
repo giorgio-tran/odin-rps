@@ -26,7 +26,8 @@
             pchoice = window.prompt("Please enter: Rock, Paper, or Scissors.");
             //while input is not rock, paper, or scissors, ask player for input
             while (pchoice == null) {
-                pchoice = window.prompt("Input can't be empty, please enter: rock, paper, or scissors.");
+                alert("Refresh if you want to play again!");
+                break;
             }
             while (!selection.includes(pchoice.trim().toLowerCase())) {
                 pchoice = window.prompt("Invalid input, please enter: rock, paper, or scissors.");
@@ -39,17 +40,14 @@
         function playARound(computerSelection, playerSelection) {
             //if tie, return 0
             if (computerSelection === playerSelection) {
-                alert("It's a tie!");
                 return 0;
             } else if (computerSelection === "rock" && playerSelection === "scissors"
                 || computerSelection === "paper" && playerSelection === "rock"
                 || computerSelection === "scissors" && playerSelection === "paper") {
-                //if the computer wins add points
-                alert("You lost this round!");
+                //if the computer return -1
                 return -1;
             } else {
-                //else the player wins 
-                alert("You won this round!");
+                //else the player wins return 1
                 return 1;
             }
         }
@@ -57,14 +55,25 @@
         //game: plays a 5 round game and accumulates score, winner has more pts
         function game() {
             for (let i = 0; i < 5; i++) {
+                const win = playARound(computerPlay(), playerPlay());
                 //if it's a tie, say that it's a tie
-                if (playARound(computerPlay(), playerPlay()) == 0) {
-                    alert("It's a tie!");
+                if (win == 0) {
+                    alert("It's a tie! The score is:\nYOU - " + playerPoints + " CPU - " + cpuPoints);
                 }
                 //if player 1 wins, print that the player won
+                if (win > 0) {
+                    playerPoints++;
+                    alert("You won! The score is:\nYOU - " + playerPoints + " CPU - " + cpuPoints);
+                }
                 //if computer wins, print that the computer won 
+                if (win < 0) {
+                    cpuPoints++;
+                    alert("You won! The score is:\nYOU - " + playerPoints + " CPU - " + cpuPoints);
+                }
             }
         }
+
+        game();
 
        
     </script>
