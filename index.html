@@ -9,36 +9,62 @@
 <body>
     <script>
         /* Create a rock paper scissor game vs. computer that keeps track of score for 
-        5 rounds and the winner is the one with more points */
+        5 rounds and the winner is the one with more points.
+        Important: rock beats scissors, scissors beat paper, paper beats rock*/
+
         let playerPoints = 0;
         let cpuPoints = 0;
         let selection = ["rock","paper","scissors"];
+        let pchoice = "";
         //cpu: randomly returns rock, paper, or scissors
         function computerPlay() {
             //selects random number in the array from 0-2
             return selection[Math.floor(Math.random() * 3)];
         }
 
-        function playerSelection() {
-            let pchoice = window.prompt("Please enter: Rock, Paper, or Scissors.").toLowerCase();
+        function playerPlay() {
+            pchoice = window.prompt("Please enter: Rock, Paper, or Scissors.");
             //while input is not rock, paper, or scissors, ask player for input
-            while (!selection.includes(pchoice)) {
-                pchoice = window.prompt("Invalid input, please enter: rock, paper, or scissors.").toLowerCase();
+            while (pchoice == null) {
+                pchoice = window.prompt("Input can't be empty, please enter: rock, paper, or scissors.");
+            }
+            while (!selection.includes(pchoice.trim().toLowerCase())) {
+                pchoice = window.prompt("Invalid input, please enter: rock, paper, or scissors.");
             }
             return pchoice;
         }
 
-        console.log(playerSelection());
+
         //play a round: compare player input with computer choice 
-            //if player wins give add one point to player, print message that says player won
-            //if computer wins add one point to computer, print message
-            //if it's a tie, return null
-
+        function playARound(computerSelection, playerSelection) {
+            //if tie, return 0
+            if (computerSelection === playerSelection) {
+                alert("It's a tie!");
+                return 0;
+            } else if (computerSelection === "rock" && playerSelection === "scissors"
+                || computerSelection === "paper" && playerSelection === "rock"
+                || computerSelection === "scissors" && playerSelection === "paper") {
+                //if the computer wins add points
+                alert("You lost this round!");
+                return -1;
+            } else {
+                //else the player wins 
+                alert("You won this round!");
+                return 1;
+            }
+        }
+        
         //game: plays a 5 round game and accumulates score, winner has more pts
-            //if it's a tie, say that it's a tie
-            //if player 1 wins, print that the player won
-            //if computer wins, print that the computer won 
-
+        function game() {
+            for (let i = 0; i < 5; i++) {
+                //if it's a tie, say that it's a tie
+                if (playARound(computerPlay(), playerPlay()) == 0) {
+                    alert("It's a tie!");
+                }
+                //if player 1 wins, print that the player won
+                //if computer wins, print that the computer won 
+            }
+        }
 
        
     </script>
