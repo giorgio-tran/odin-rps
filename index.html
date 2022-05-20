@@ -4,10 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script>
+    <div class="header">
+        Rock Paper Scissors
+    </div>
+    <div class="content">
+        <div class="rock">
+            <img src="images/rock.svg" alt="Rock">
+            <div class="content-text">rock</div>
+        </div>
+        <div class="paper">
+            <img src="images/paper.svg" alt="Paper">
+            <div class="content-text">paper</div>
+        </div>
+        <div class="scissors">
+            <img src="images/scissors.svg" alt="Scissors">
+            <div class="content-text">scissors</div>
+        </div>
+    </div>
+    <div class="content-2"></div>
+    <div class="footer">
+        <a href="https://github.com/giorgio808">Made by giorgio808</a>
+    </div>
+    <!-- <script>
         /* Create a rock paper scissor game vs. computer that keeps track of score for 
         5 rounds and the winner is the one with more points.
         Important: rock beats scissors, scissors beat paper, paper beats rock*/
@@ -26,7 +48,7 @@
             pchoice = window.prompt("Rock, Paper, or Scissors?");
             //while input is not rock, paper, or scissors, ask player for input
             while (pchoice == null) {
-                alert("Refresh if you want to play again!");
+                //alert("Refresh if you want to play again!");
                 break;
             }
             while (!selection.includes(pchoice.trim().toLowerCase())) {
@@ -36,52 +58,8 @@
         }
 
 
-        //play a round: compare player input with computer choice 
-        function playARound(computerSelection, playerSelection) {
-            //if tie, return 0
-            if (computerSelection === playerSelection) {
-                return 0;
-            } else if (computerSelection === "rock" && playerSelection === "scissors"
-                || computerSelection === "paper" && playerSelection === "rock"
-                || computerSelection === "scissors" && playerSelection === "paper") {
-                //if the computer return -1
-                return -1;
-            } else {
-                //else the player wins return 1
-                return 1;
-            }
-        }
-        
-        //game: plays a 5 round game and accumulates score, winner has more pts
-        function game() {
-            alert("Welcome to Rock Paper Scissors best of 5 against the CPU. Good luck.")
-            for (let i = 0; i < 5; i++) {
-                const win = playARound(computerPlay(), playerPlay());
-                //if it's a tie, say that it's a tie
-                if (win == 0) {
-                    alert("It's a tie for this round! The score is:\nYOU - " + playerPoints + " CPU - " + cpuPoints);
-                }
-                //if player 1 wins, print that the player won
-                if (win > 0) {
-                    playerPoints++;
-                    alert("You won this round! The score is:\nYOU - " + playerPoints + " CPU - " + cpuPoints);
-                }
-                //if computer wins, print that the computer won 
-                if (win < 0) {
-                    cpuPoints++;
-                    alert("You lost this round! The score is:\nYOU - " + playerPoints + " CPU - " + cpuPoints);
-                }
-            }
-            if (playerPoints > cpuPoints) {
-                alert("YOU WON, CONGRATULATIONS.");
-            } else {
-                alert("BETTER LUCK NEXT TIME, THE CPU WINS.");
-            }
-        }
-
-        game();
 
        
-    </script>
+    </script> -->
 </body>
 </html>
