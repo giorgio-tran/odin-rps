@@ -54,9 +54,13 @@ a {
 
 .box {
     padding: 0;
-
 }
 
 .box:hover {
     transform: scale(1.2);
+}
+
+.small {
+    transform: scale(0.8);
+    transition: all 0.07s ease; 
 }
