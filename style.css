@@ -9,8 +9,8 @@ body {
 }
 
 img {
-    height: 200px;
-    width: 200px;
+    height: 220px;
+    width: 220px;
 }
 
 a {
@@ -32,9 +32,10 @@ a {
 .content {
     display: flex;
     flex: 1;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     padding: 100px;
+    gap: 40px;
 }
 
 .content-text {
@@ -52,9 +53,10 @@ a {
 }
 
 .box {
-    padding: 50px 50px;
+    padding: 0;
+
 }
 
-.hover {
+.box:hover {
     transform: scale(1.2);
 }

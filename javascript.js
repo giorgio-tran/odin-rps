@@ -6,6 +6,10 @@ boxes.forEach((box) => {
         console.log(box.id);
     });
 });
+
+
+
+
 //if box is clicked
     //id is stored
     //computer selects a random choice
