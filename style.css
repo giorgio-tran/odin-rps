@@ -34,7 +34,6 @@ a {
     flex: 1;
     justify-content: center;
     align-items: center;
-    gap: 175px;
     padding: 100px;
 }
 
@@ -50,4 +49,12 @@ a {
     justify-content: center;
     background-color:#d1b7a1;
     padding: 30px;
+}
+
+.box {
+    padding: 50px 50px;
+}
+
+.hover {
+    transform: scale(1.2);
 }
