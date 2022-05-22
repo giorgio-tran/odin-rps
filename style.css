@@ -18,7 +18,7 @@ a {
     color: white;
     font-weight: bold;
 }
-
+/* Header */
 .header {
     padding: 40px;
     margin: 0;
@@ -29,13 +29,20 @@ a {
     font-weight: bolder; 
 }
 
+/* Content */
 .content {
     display: flex;
     flex: 1;
     justify-content: space-evenly;
     align-items: center;
-    padding: 100px;
+    padding: 30px;
     gap: 40px;
+}
+
+.box {
+    padding: 0;
+    min-width: 200px;
+    min-height: 200px
 }
 
 .content-text {
@@ -44,12 +51,24 @@ a {
     font-weight: bolder;
 }
 
-.content-2 {
-    font-size: 50px;
+.content-2, .instructions, .content-3 {
+    color: gray;
     font-weight: bolder;
     text-align: center;
 }
 
+.content-2, .instructions {
+    font-size: 50px;
+    padding: 50px;
+}
+
+.content-3 {
+    font-size: 50px;
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+/* Footer */
 .footer {
     display: flex;
     align-items: center;
@@ -58,10 +77,7 @@ a {
     padding: 30px;
 }
 
-.box {
-    padding: 0;
-}
-
+/* Transitions */
 .box:hover {
     transform: scale(1.2);
 }

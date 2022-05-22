@@ -12,6 +12,9 @@
     <div class="header">
         ROCK PAPER SCISSORS
     </div>
+    <div class ="instructions">
+        BEST OF 5 VERSUS CPU, GOOD LUCK!
+    </div>
     <div class="content">
         <div class="box" id="rock">
             <img src="images/rock.svg" alt="Rock">
@@ -26,41 +29,12 @@
             <div class="content-text">scissors</div>
         </div>
     </div>
-    <div class="content-2"></div>
+    <div class="content-2">
+        CHOOSE YOUR WEAPON TO START
+    </div>
+    <div class="content-3"> test </div>
     <div class="footer">
         <a href="https://github.com/giorgio808" target="_blank" rel="noopener noreferrer">made by giorgio808</a>
     </div>
-    <!-- <script>
-        /* Create a rock paper scissor game vs. computer that keeps track of score for 
-        5 rounds and the winner is the one with more points.
-        Important: rock beats scissors, scissors beat paper, paper beats rock*/
-
-        let playerPoints = 0;
-        let cpuPoints = 0;
-        let selection = ["rock","paper","scissors"];
-        let pchoice = "";
-        //cpu: randomly returns rock, paper, or scissors
-        function computerPlay() {
-            //selects random number in the array from 0-2
-            return selection[Math.floor(Math.random() * 3)];
-        }
-
-        function playerPlay() {
-            pchoice = window.prompt("Rock, Paper, or Scissors?");
-            //while input is not rock, paper, or scissors, ask player for input
-            while (pchoice == null) {
-                //alert("Refresh if you want to play again!");
-                break;
-            }
-            while (!selection.includes(pchoice.trim().toLowerCase())) {
-                pchoice = window.prompt("Invalid input, please enter: rock, paper, or scissors.");
-            }
-            return pchoice;
-        }
-
-
-
-       
-    </script> -->
 </body>
 </html>
