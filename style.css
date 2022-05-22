@@ -44,6 +44,12 @@ a {
     font-weight: bolder;
 }
 
+.content-2 {
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+}
+
 .footer {
     display: flex;
     align-items: center;
